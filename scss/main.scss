@@ -1,0 +1,62 @@
+@use 'abstracts/variables' as v;
+@use 'base';
+@use 'components';
+
+:root {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    font-size: 1rem;
+    line-height: 1.5;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    max-width: 80%;
+}
+
+// #app {
+//     max-width: 60rem;
+//     margin: 0 auto;
+//     padding: 2rem;
+//     text-align: center;
+// }
+
+.logo {
+    padding: 0;
+    margin: 0;
+    will-change: filter;
+    &:hover {
+        filter: drop-shadow(0 0 2em #646cffaa);
+    }
+}
+
+.splash-screen {
+    background-color: v.$background;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+    position: fixed;
+
+}
+
+.hidden {
+    display: none;
+}

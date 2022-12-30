@@ -1,0 +1,21 @@
+{
+  "name": "be-appy",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "author": "Emma Van der Haeghen",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pgmgent-interactiveAR/be-appy-pgm-emmavanderhaeghen.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "sass": "^1.57.1",
+    "vite": "^4.0.0"
+  }
+}
