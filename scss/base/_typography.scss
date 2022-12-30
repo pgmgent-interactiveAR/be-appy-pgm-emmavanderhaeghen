@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as v;
+
+h1 {
+    font-family: 'Sansita', sans-serif;
+    font-size: 3.2em;
+    line-height: 1.1;
+    color: v.$heading;
+}
+
+p {
+    font-size: 1.15em;
+    line-height: 1.5;
+    color: v.$paragraph;
+    max-width: 30rem;
+    padding: 0 1.5rem;
+    margin: 1.5rem auto;
+}

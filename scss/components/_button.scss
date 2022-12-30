@@ -1,0 +1,40 @@
+@use '../abstracts/variables' as v;
+
+button {
+    border-radius: 50%;
+    height: 5rem;
+    width: 5rem;
+    max-height: 6rem;
+    max-width: 6rem;
+    border: 3px solid v.$background;
+    padding: .25em;
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-family: inherit;
+    color: v.$button-text;
+    background-color: v.$button;
+    cursor: pointer;
+    transition: border-color 0.25s;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &:hover {
+        border-color: v.$button;
+    }
+    
+    &:focus,
+    &:focus-visible {
+        outline: 4px auto -webkit-focus-ring-color;
+    }
+}
+
+.splash-btn {
+    height: 8rem;
+    width: 8rem;
+    padding: 1rem;
+    text-align: center;
+}
