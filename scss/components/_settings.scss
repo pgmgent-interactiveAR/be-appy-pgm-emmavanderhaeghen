@@ -1,0 +1,17 @@
+@use '../abstracts/variables' as v;
+
+.settings {
+    position: relative;
+    bottom: 10rem;
+    left: 1rem;
+    max-width: 24rem;
+    margin: 0 auto;
+}
+
+.container {
+    background-color: v.$background;
+    padding: 1rem 3.5rem;
+    border-radius: 5rem;
+    display: flex;
+    justify-content: space-between;
+}
