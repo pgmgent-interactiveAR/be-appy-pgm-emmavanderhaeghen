@@ -1,18 +1,18 @@
 @use '../abstracts/variables' as v;
 
-button {
+.btn {
     border-radius: 50%;
     height: 5rem;
     width: 5rem;
     max-height: 6rem;
     max-width: 6rem;
-    border: 3px solid v.$background;
+    border: none;
+    background-color: transparent;
     padding: .25em;
     font-size: 1.25rem;
     font-weight: 600;
     font-family: inherit;
     color: v.$button-text;
-    background-color: v.$button;
     cursor: pointer;
     transition: border-color 0.25s;
 
@@ -28,7 +28,7 @@ button {
     
     &:focus,
     &:focus-visible {
-        outline: 4px auto -webkit-focus-ring-color;
+        outline: none;
     }
 }
 
@@ -37,4 +37,38 @@ button {
     width: 8rem;
     padding: 1rem;
     text-align: center;
+    border: 3px solid v.$background;
+    background-color: v.$button;
+}
+
+.tutorial-btn, .open-btn, .close-btn {
+    width: 4rem;
+    height: 4rem;
+}
+
+.tutorial-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 4rem;
+    height: 4rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.open-btn {
+    position: absolute;
+    bottom: -9rem;
+    left: -4rem;
+    width: 4rem;
+    height: 4rem;
+}
+
+.close-btn {
+    position: absolute;
+    bottom: 5rem;
+    left: .5rem;
 }
