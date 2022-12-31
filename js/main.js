@@ -9,11 +9,11 @@ const App = {
     this.splashBtn = document.querySelector(".splash-btn");
     this.mainScreen = document.querySelector(".main-screen");
 
-    this.navUp = document.querySelector(".nav-up");
-    this.navDown = document.querySelector(".nav-down");
-    this.controls = document.querySelector(".controls");
+    this.btnClose = document.querySelector(".close-btn");
+    this.btnOpen = document.querySelector(".open-btn");
+    this.container = document.querySelector(".container");
 
-    this.tutorial = document.querySelector(".tutorial");
+    this.tutorial = document.querySelector("#tutorial");
     this.tutorialCard = document.querySelector(".tutorial-card");
   },
 
@@ -25,16 +25,16 @@ const App = {
     });
 
     // add event listener to nav up button
-    this.navUp.addEventListener('click', () => {
-      this.navUp.classList.toggle("hidden");
-      this.navDown.classList.toggle("hidden");
-      this.controls.classList.toggle("hidden");
+    this.btnOpen.addEventListener('click', () => {
+      this.btnOpen.classList.toggle("hidden");
+      this.btnClose.classList.toggle("hidden");
+      this.container.classList.toggle("hidden");
     });
 
-    this.navDown.addEventListener('click', () => {
-      this.navUp.classList.toggle("hidden");
-      this.navDown.classList.toggle("hidden");
-      this.controls.classList.toggle("hidden");
+    this.btnClose.addEventListener('click', () => {
+      this.btnOpen.classList.toggle("hidden");
+      this.btnClose.classList.toggle("hidden");
+      this.container.classList.toggle("hidden");
     });
 
 

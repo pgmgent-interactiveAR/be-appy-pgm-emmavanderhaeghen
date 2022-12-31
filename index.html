@@ -12,28 +12,31 @@
         <div class="splash-screen">
             <h1>Feeling down? 😞</h1>
             <p>Sometimes you just don't want to think about all the deadlines and papers that's all due in about ... a week. So put your stress aside and <strong>BE APPY!</strong>  😁</p>
-            <button class="splash-btn">Let's GO</button>
+            <button class="btn splash-btn">Let's GO</button>
         </div>
 
         <div class="main-screen ">
-            <button class="tutorial"><img src="public/assets/svg/question-mark.svg" alt=""></button>
-            <div class="tutorial-card hidden">
-                <p>this is a tutorial</p>
-            </div>
+            <img class="placeholder" src="public/assets/placeholder.jpg" alt="">
+            <section class="">
+                <button id="tutorial" class="btn tutorial-btn"><img src="public/assets/svg/question-mark.svg" alt=""></button>
+                <div class="tutorial-card hidden">
+                    <h2>Tutorial</h2>
+                    <p>Welcome to <strong>BE APPY!</strong>  😁</p>
+                    <p>Click on 💃 to watch dancing lectors. Click on 🖼️ to decorate your room with quotes. Click on 🐈 to take care of your pet.</p>
+                </div>
+            </section>
 
-            <button class="nav-up"><img src="public/assets/svg/arrow-up.svg" alt=""></button>
-            <button class="nav-down hidden"><img src="public/assets/svg/arrow-down.svg" alt=""></button>
-
-            <div class="controls hidden">
-                <img src="public/assets/svg/dancing.svg" alt="">
-                <img src="public/assets/svg/painting.svg" alt="">
-                <img src="public/assets/svg/cat.svg" alt="">
-            </div>
-
-
-
+            <section class="settings">
+                <button class="btn open-btn"><img src="public/assets/svg/arrow-up.svg" alt=""></button>
+                <button class="btn close-btn hidden"><img src="public/assets/svg/arrow-down.svg" alt=""></button>
+    
+                <div class="container hidden">
+                    <button class="btn" id="dance"><img src="public/assets/svg/dancing.svg" alt=""></button>
+                    <button class="btn" id="quote"><img src="public/assets/svg/painting.svg" alt=""></button>
+                    <button class="btn" id="pet"><img src="public/assets/svg/cat.svg" alt=""></button>
+                </div>
+            </section>
         </div>
-
     </div>
     <script type="module" src="js/main.js"></script>
 </body>
