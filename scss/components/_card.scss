@@ -1,0 +1,12 @@
+@use '../abstracts/variables' as v;
+
+.tutorial-card {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background-color: v.$background;
+    padding: .5rem;
+    width: 20rem;
+    margin: 0 auto;
+    border-radius: 2rem;
+}
