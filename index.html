@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -19,7 +19,7 @@
         </div>
 
         <div class="main-screen ">
-            <!-- <img class="placeholder" src="public/assets/placeholder.jpg" alt=""> -->
+            <img class="placeholder" src="public/assets/placeholder.jpg" alt="">
             <section class="">
                 <button id="tutorial" class="btn tutorial-btn py-0-5 px-0-5"><img src="public/assets/svg/question-mark.svg" alt=""></button>
                 <div class="tutorial-card hidden pr-1-5 pl-1-5 pt-1-5 pb-1-5">
@@ -40,7 +40,7 @@
                 </div>
             </section>
 
-            <!-- <section class="quotes">
+            <section class="quotes">
                 <h2>If you don't know where you're going, any road will get you there.</h2>
                 <h2>Life always offers your a change. It's called <strong class="pink">Tomorrow</strong>.</h2>
                 <h2>Everything is going to be OK in the end. If it's nog OK, it's not the end.</h2>
@@ -50,7 +50,7 @@
                 <h2>You can <strong class="pink">DO IT</strong>.</h2>
                 <h2>Don't let your dreams be dreams.</h2>
                 <h2>Sunny days wouldn't be special if it never rained.</h2>
-            </section> -->
+            </section>
         </div>
 
         <a-scene 
@@ -85,5 +85,74 @@
         </a-scene>
     </div>
     <script type="module" src="js/main.js"></script>
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>VR Art Gallery</title>
+	<meta name="description" content="A-Frame Examples">
+	<script src="js/aframe-master.1.0.4.min.js"></script>
+	<script src="js/aframe-environment-component.min.js"></script>
+	<script src="js/extended-wasd-controls.js"></script>
+</head>
+
+<body>
+
+<script>
+AFRAME.registerComponent("boundary",
+{
+	init: function()
+	{
+
+	},
+
+	tick: function(time, deltaTime)
+	{
+		if (this.el.object3D.position.z < -2.5)
+			this.el.object3D.position.z = -2.5;
+		if (this.el.object3D.position.z >  2.5)
+			this.el.object3D.position.z =  2.5;
+		if (this.el.object3D.position.x < -2.5)
+			this.el.object3D.position.x = -2.5;
+		if (this.el.object3D.position.x >  2.5)
+			this.el.object3D.position.x =  2.5;
+
+	}
+});
+       
+</script>
+<a-scene>
+    <a-assets>
+      <audio id="click-sound" src="https://cdn.aframe.io/360-image-gallery-boilerplate/audio/click.ogg"></audio>
+  
+      <!-- Images. -->
+      <img id="city" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/city.jpg">
+      <img id="city-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-city.jpg">
+      <img id="cubes" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/cubes.jpg">
+      <img id="cubes-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-cubes.jpg">
+      <img id="sechelt" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/sechelt.jpg">
+      <img id="sechelt-thumb" src="https://cdn.aframe.io/360-image-gallery-boilerplate/img/thumb-sechelt.jpg">
+    </a-assets>
+  
+    <!-- 360-degree image. -->
+    <a-sky id="image-360" radius="10" src="#city"></a-sky>
+  
+    <!-- Link template we will build. -->
+    <a-entity class="link"></a-entity>
+  
+    <!-- Camera + Cursor. -->
+    <a-camera>
+      <a-cursor
+        id="cursor"
+        animation__click="property: scale; from: 0.1 0.1 0.1; to: 1 1 1; easing: easeInCubic; dur: 150; startEvents: click"
+        animation__clickreset="property: scale; to: 0.1 0.1 0.1; dur: 1; startEvents: animationcomplete__click"
+        animation__fusing="property: scale; from: 1 1 1; to: 0.1 0.1 0.1; easing: easeInCubic; dur: 150; startEvents: fusing"></a-cursor>
+    </a-camera>
+  </a-scene>
+
 </body>
 </html>
