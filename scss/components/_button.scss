@@ -1,18 +1,20 @@
 @use '../abstracts/variables' as v;
 
 .btn {
+    border: none;
     border-radius: 50%;
+
     height: 5rem;
     width: 5rem;
     max-height: 6rem;
     max-width: 6rem;
-    border: none;
+
+    color: v.$button-text;
     background-color: transparent;
-    padding: .25em;
+
     font-size: 1.25rem;
     font-weight: 600;
-    font-family: inherit;
-    color: v.$button-text;
+    font-family: v.$secondary-font;
     cursor: pointer;
     transition: border-color 0.25s;
 
@@ -61,14 +63,14 @@
 
 .open-btn {
     position: absolute;
-    bottom: -9rem;
-    left: -4rem;
+    bottom: -5rem;
+    left: -1rem;
     width: 4rem;
     height: 4rem;
 }
 
 .close-btn {
     position: absolute;
-    bottom: 5rem;
-    left: .5rem;
+    bottom: 3rem;
+    left: -1.5rem;
 }
