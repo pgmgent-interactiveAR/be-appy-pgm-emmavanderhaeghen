@@ -1,19 +1,20 @@
 @use '../abstracts/variables' as v;
 
 .splash-screen {
-    background-color: v.$background;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 100vh;
 
-    z-index: 999;
+    background-color: v.$background;
+    height: 100vh;
+    width: 100vw;
+
+    z-index: 1000;
     position: fixed;
 }
 
 .main-screen {
     position: relative;
-    height: 100vh;
-    width: 100vw;
+
 }
