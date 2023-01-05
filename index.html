@@ -2,27 +2,30 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face.prod.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face-aframe.prod.js"></script>
     <title>Be Appy</title>
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <link rel="stylesheet" href="../scss/main.scss" />
 </head>
 <body>
-    <div id="app">
+    <div class="app-container" id="app">
         <div class="splash-screen">
             <h1>Feeling down? 😞</h1>
-            <p>Sometimes you just don't want to think about all the deadlines and papers that's all due in about ... a week. So put your stress aside and <strong>BE APPY!</strong>  😁</p>
+            <p class="px-2-5 py-1-5">Sometimes you just don't want to think about all the deadlines and papers that's all due in about ... a week. So put your stress aside and <strong>BE APPY!</strong>  😁</p>
             <button class="btn splash-btn">Let's GO</button>
         </div>
 
         <div class="main-screen ">
-            <img class="placeholder" src="public/assets/placeholder.jpg" alt="">
+            <!-- <img class="placeholder" src="public/assets/placeholder.jpg" alt=""> -->
             <section class="">
-                <button id="tutorial" class="btn tutorial-btn"><img src="public/assets/svg/question-mark.svg" alt=""></button>
-                <div class="tutorial-card hidden">
+                <button id="tutorial" class="btn tutorial-btn py-0-5 px-0-5"><img src="public/assets/svg/question-mark.svg" alt=""></button>
+                <div class="tutorial-card hidden pr-1-5 pl-1-5 pt-1-5 pb-1-5">
                     <h2>Tutorial</h2>
                     <p>Welcome to <strong>BE APPY!</strong>  😁</p>
-                    <p>Click on 💃 to watch dancing lectors. Click on 🖼️ to decorate your room with quotes. Click on 🐈 to take care of your pet.</p>
+                    <p class="py-1">Click on 💃 to watch dancing lectors. Click on 🖼️ to decorate your room with quotes. Click on 🐈 to take care of your pet.</p>
                 </div>
             </section>
 
@@ -31,13 +34,13 @@
                 <button class="btn close-btn hidden"><img src="public/assets/svg/arrow-down.svg" alt=""></button>
     
                 <div class="container hidden">
-                    <button class="btn" id="dance"><img src="public/assets/svg/dancing.svg" alt=""></button>
-                    <button class="btn" id="quote"><img src="public/assets/svg/painting.svg" alt=""></button>
-                    <button class="btn" id="pet"><img src="public/assets/svg/cat.svg" alt=""></button>
+                    <button class="btn py-0-5 px-0-5" id="dance"><img src="public/assets/svg/dancing.svg" alt=""></button>
+                    <button class="btn py-0-5 px-0-5" id="quote"><img src="public/assets/svg/painting.svg" alt=""></button>
+                    <button class="btn py-0-5 px-0-5" id="pet"><img src="public/assets/svg/cat.svg" alt=""></button>
                 </div>
             </section>
 
-            <section class="quotes">
+            <!-- <section class="quotes">
                 <h2>If you don't know where you're going, any road will get you there.</h2>
                 <h2>Life always offers your a change. It's called <strong class="pink">Tomorrow</strong>.</h2>
                 <h2>Everything is going to be OK in the end. If it's nog OK, it's not the end.</h2>
@@ -47,8 +50,39 @@
                 <h2>You can <strong class="pink">DO IT</strong>.</h2>
                 <h2>Don't let your dreams be dreams.</h2>
                 <h2>Sunny days wouldn't be special if it never rained.</h2>
-            </section>
+            </section> -->
         </div>
+
+        <a-scene 
+        mindar-face 
+        embedded 
+        color-space="sRGB" 
+        renderer="colorManagement: true, physicallyCorrectLights" 
+        vr-mode-ui="enabled: false" 
+        device-orientation-permission-ui="enabled: false"
+        >
+            <a-assets>
+                <a-asset-item 
+                id="cat" 
+                src="assets/3D-models/cat.glb">
+                </a-asset-item>
+            </a-assets>
+
+            <a-camera 
+            active="false" 
+            position="0 0 0">
+            </a-camera>
+
+            <a-entity 
+            mindar-face-target="anchorIndex: 1">
+                <a-gltf-model 
+                    position="0.1 0.1 0.1"
+                    rotation="1 0 0" 
+                    scale="0.03 0.03 0.03" 
+                    src="#cat">
+                </a-gltf-model>
+            </a-entity>
+        </a-scene>
     </div>
     <script type="module" src="js/main.js"></script>
 </body>
