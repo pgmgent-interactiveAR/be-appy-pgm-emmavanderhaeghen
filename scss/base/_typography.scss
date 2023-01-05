@@ -1,26 +1,32 @@
 @use '../abstracts/variables' as v;
 
-h1 {
-    font-family: 'Sansita', sans-serif;
-    font-size: 3.2em;
-    line-height: 1.1;
+h1, h2, h3, h4 {
+    font-family: v.$primary-font;
     color: v.$heading;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
 h2 {
-    font-family: 'Sansita', sans-serif;
     font-size: 2rem;
-    color: v.$heading;
-    margin: .5rem 0;
+    font-weight: 600;
 }
 
+h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+
 p {
-    font-size: 1.15em;
-    line-height: 1.5;
+    font-family: v.$secondary-font;
     color: v.$paragraph;
+    font-size: 1rem;
+    line-height: 1.5;
     max-width: 30rem;
-    padding: 0 1.5rem;
-    margin: 1.5rem auto;
 }
 
 .pink {
