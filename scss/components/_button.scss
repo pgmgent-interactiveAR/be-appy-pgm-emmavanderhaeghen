@@ -4,10 +4,10 @@
     border: none;
     border-radius: 50%;
 
-    height: 5rem;
-    width: 5rem;
-    max-height: 6rem;
-    max-width: 6rem;
+    // height: 5rem;
+    // width: 5rem;
+    // max-height: 6rem;
+    // max-width: 6rem;
 
     color: v.$button-text;
     background-color: transparent;
@@ -23,6 +23,34 @@
         height: 100%;
         object-fit: cover;
     }
+
+    &:hover {
+        border-color: v.$button;
+    }
+    
+    &:focus,
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.btn--primary {
+    background-color: v.$button;
+    border-radius: 1rem;
+
+    &:hover {
+        border-color: v.$button;
+    }
+    
+    &:focus,
+    &:focus-visible {
+        outline: none;
+    }
+}
+
+.btn--secondary {
+    background-color: v.$secondary;
+    border-radius: 1rem;
 
     &:hover {
         border-color: v.$button;
