@@ -16,6 +16,15 @@ const App = {
 
     this.tutorial = document.querySelector("#tutorial");
     this.tutorialCard = document.querySelector(".tutorial-card");
+
+    this.danceBtn = document.querySelector("#dance");
+    this.danceModel = document.querySelector(".dance-model");
+  
+    this.quoteBtn = document.querySelector("#quote");
+    this.quoteGenerator = document.querySelector(".quote-generator");
+    
+    this.petBtn = document.querySelector("#pet");
+    this.petModel = document.querySelector(".pet-model");
   },
 
   addEventListener() {
@@ -38,10 +47,27 @@ const App = {
       this.container.classList.toggle("hidden");
     });
 
-
-        // add event listener to tutorial button
+    // add event listener to tutorial button
     this.tutorial.addEventListener('click', () => {
       this.tutorialCard.classList.toggle("hidden");
+    });
+
+    // add event listener to dance button
+    this.danceBtn.addEventListener('click', () => {
+      // this.danceModel.toggleAttribute('visible', true);
+      this.danceModel.setAttribute('visible', true);
+      this.danceModel.setAttribute('animation-mixer', 'clip: step hiphop dance; timeScale: 1; loop: infinite; clampWhenFinished: true');
+    });
+
+    // add event listener to quote button
+    this.quoteBtn.addEventListener('click', () => {
+      this.quoteGenerator.classList.toggle("hidden");
+    });
+
+    // add event listener to pet button
+    this.petBtn.addEventListener('click', () => {
+      // this.petModel.toggleAttribute('visible', true);
+      this.petModel.setAttribute('visible', true);
     });
   },
 };
