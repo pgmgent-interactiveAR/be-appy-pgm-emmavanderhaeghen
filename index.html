@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <title>Be Appy</title>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <meta name="description" content="Be Appy" />
+
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face.prod.js"></script>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
     <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.5/dist/mindar-face-aframe.prod.js"></script>
-    <title>Be Appy</title>
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.1.1/dist/aframe-extras.min.js"></script>
+
     <link rel="stylesheet" href="../scss/main.scss" />
 </head>
 <body>
@@ -41,15 +45,16 @@
                 </div>
             </section>
 
-            <div class="quote-generator">
+            <div class="quote-generator hidden">
                 <button onclick="generator()" class="btn btn--primary py-1 px-1 mb-1">Generate!</button>
                 <h1 class="jumbotron" id="name">Your Quote Will Appear Here</h1>
                 <button class="btn btn--secondary py-1 px-1 mt-1" id="copy-btn" title="copy">copy</button>
             </div>
 
         </div>
-<!-- 
+
         <a-scene 
+        arjs
         mindar-face 
         embedded 
         color-space="sRGB" 
@@ -58,6 +63,11 @@
         device-orientation-permission-ui="enabled: false"
         >
             <a-assets>
+                <a-asset-item 
+                id="step" 
+                src="assets/3D-models/step.glb">
+                </a-asset-item>
+
                 <a-asset-item 
                 id="cat" 
                 src="assets/3D-models/cat.glb">
@@ -70,16 +80,32 @@
             </a-camera>
 
             <a-entity 
-            mindar-face-target="anchorIndex: 1">
+            mindar-face-target="anchorIndex: 20">
                 <a-gltf-model 
+                    visible= "false"
+                    class="dance-model"
                     position="0.1 0.1 0.1"
                     rotation="1 0 0" 
-                    scale="0.03 0.03 0.03" 
-                    src="#cat">
+                    scale="1 1 1" 
+                    src="#step"
+                    animation-mixer="clip:step hiphop dance; loop:infinite;">
                 </a-gltf-model>
+
+                <a-gltf-model 
+                    visible= "false"
+                    class="pet-model"
+                    position="0.1 0.1 0.1"
+                    rotation="1 0 0" 
+                    scale=".02 .02 .02" 
+                    src="#cat">
+            </a-gltf-model>
             </a-entity>
-        </a-scene> -->
+        </a-scene>
+
     </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
     <script type="module" src="js/main.js"></script>
     <script>
         var quotes = ["If you don't know where you're going, any road will get you there.", "Life always offers your a change. It's called tomorrow.", "Everything is going to be OK in the end. If it's nog OK, it's not the end.", "Don't look back. You're not going there.", "Enjoy the little things.", "You can DO IT.", "Don't let your dreams be dreams.", "Sunny days wouldn't be special if it never rained."] 
